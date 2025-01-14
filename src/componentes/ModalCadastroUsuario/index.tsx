@@ -1,10 +1,17 @@
 import { AbBotao, AbCampoTexto, AbModal } from "ds-alurabooks";
 import { useState } from "react";
-
+import axios from "axios";
 import imagemPrincipal from "./assets/login.png";
 
 import "./ModalCadastroUsuario.css";
-export default function ModalCadastroUsuario() {
+interface PropsModalCadastroUsuario {
+  aberta: boolean;
+  aoFechar: () => void;
+}
+export default function ModalCadastroUsuario({
+  aberta,
+  aoFechar,
+}: PropsModalCadastroUsuario) {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [endereco, setEndereco] = useState("");
@@ -23,16 +30,24 @@ export default function ModalCadastroUsuario() {
       cep,
       complemento,
     };
-    console.log(usuario);
-    alert("Usuário foi cadastrado com sucesso!");
+    axios
+      .post("http://localhost:8000/public/registrar", usuario)
+      .then(() => {
+        alert("Usuario cadastrado com sucesso");
+        setNome("");
+        setEmail("");
+        setEndereco("");
+        setComplemento("");
+        setCep("");
+        setSenha("");
+        setSenhaConfirmada("");
+        aoFechar();
+      })
+      .catch(() => alert("OPS! Alguma coisa deu errado"));
   };
 
   return (
-    <AbModal
-      titulo="Cadastrar"
-      aberta={true}
-      aoFechar={() => console.log("fecha ai")}
-    >
+    <AbModal titulo="Cadastrar" aberta={aberta} aoFechar={aoFechar}>
       <section className="corpoModalCadastro">
         <figure>
           <img
