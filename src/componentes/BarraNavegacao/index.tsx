@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import BotaoNavegacao from "../BotaoNavegacao";
 import ModalCadastroUsuario from "../ModalCadastroUsuario";
 import logo from "./assets/logo.png";
@@ -10,6 +10,7 @@ import ModalLoginUsuario from "../ModalLoginUsuario";
 const BarraNavegacao = () => {
   const [modalCadastroAberto, setModalCadastroAberto] = useState(false);
   const [modalLoginAberto, setModalLoginAberto] = useState(false);
+  let navigate = useNavigate();
 
   const token = sessionStorage.getItem("token");
 
@@ -20,6 +21,11 @@ const BarraNavegacao = () => {
   const aoEfetuarLogin = () => {
     setModalLoginAberto(false);
     setUsuarioEstaLogado(true);
+  };
+  const EfetuarLogout = () => {
+    setUsuarioEstaLogado(false);
+    sessionStorage.removeItem("token");
+    navigate("/");
   };
 
   return (
@@ -85,6 +91,14 @@ const BarraNavegacao = () => {
           <>
             <li>
               <Link to="/minha-conta/pedidos">Minha Conta</Link>
+            </li>
+            <li>
+              <BotaoNavegacao
+                texto="Logout"
+                textoAltSrc="Icone representando um usuário"
+                imagemSrc={usuario}
+                onClick={EfetuarLogout}
+              />
             </li>
           </>
         )}
