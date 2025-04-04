@@ -1751,6 +1751,18 @@
     "@svgr/plugin-svgo" "^5.5.0"
     loader-utils "^2.0.0"
 
+"@tanstack/query-core@5.71.10":
+  version "5.71.10"
+  resolved "https://registry.npmjs.org/@tanstack/query-core/-/query-core-5.71.10.tgz"
+  integrity sha512-/fKEY8fO1nbszfrBatzmhJa1nEwIKn0c6Tv2A1ocSA5OiD2GukOIV8nnBbvJRgZb/VIoBy9/N4PVbABI8YQLow==
+
+"@tanstack/react-query@^5.71.10":
+  version "5.71.10"
+  resolved "https://registry.npmjs.org/@tanstack/react-query/-/react-query-5.71.10.tgz"
+  integrity sha512-mQYM/ObpL8YMDz8vCoUuHkbe8Yu7NnVRH8aBaBa/3zlufjp1f1VuWjeO3TcumNHfuVMDwEAGinsgwrB7OKADiQ==
+  dependencies:
+    "@tanstack/query-core" "5.71.10"
+
 "@testing-library/dom@^8.5.0", "@testing-library/dom@>=7.21.4":
   version "8.17.1"
   resolved "https://registry.npmjs.org/@testing-library/dom/-/dom-8.17.1.tgz"
@@ -7518,7 +7530,7 @@ react-scripts@5.0.1:
   optionalDependencies:
     fsevents "^2.3.2"
 
-react@^18.0.0, react@^18.2.0, "react@>= 16", "react@>= 16.8.0", react@>=16, react@>=16.8:
+"react@^18 || ^19", react@^18.0.0, react@^18.2.0, "react@>= 16", "react@>= 16.8.0", react@>=16, react@>=16.8:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
