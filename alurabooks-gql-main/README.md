@@ -5,16 +5,37 @@
 O AluraBooks é uma loja virtual que vende livros da Casa do Código. 
 É um MVP que tá só começando e ainda tem muitas funcionalidades novas para serem desenvolvidas.
 
-# JSONServer + JWT Auth
+# JSONServer + JWT Auth + Nest & GraphQL
 
 Essa é ma API Rest mockada, utilizando json-server e JWT.
+Ao lado, temos um Apollo Server criado com a ajuda do Nest encapsulando as chamadas a API.
+
+![ScreenShot do playground do GraphQL](screenshot.png)
+
 
 ## 🛠️ Instalação
 
 ```bash
 $ npm install
-$ npm run start-auth
 ```
+
+## 🛠️ Execução
+
+Abra um terminal e execute o seguinte comando:
+
+```bash
+$ npm run start
+```
+
+Deixe o terminal anterior aberto, abra um novo terminal e execute:
+
+```bash
+$ npm run start:api
+```
+
+Agora sim, com os dois comando em execução está tudo pronto para o início do curso!
+
+
 ## 🛠️ Como se registrar?
 
 Você pode fazer isso efetuando uma requisição post para:

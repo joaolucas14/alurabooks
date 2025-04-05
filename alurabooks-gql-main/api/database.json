@@ -5,20 +5,29 @@
       "data": "2022-05-26",
       "entrega": "2022-05-26",
       "total": 29.9
+    },
+    {
+      "id": 89019963,
+      "data": "2022-07-26",
+      "entrega": "2022-08-01",
+      "total": 58.8
     }
   ],
   "livros": [
     {
       "id": 1,
-      "categoria": 3,
+      "autorId": 1,
+      "categoriaId": 3,
       "titulo": "Acessibilidade na Web",
+      "tagIds": [
+        1
+      ],
       "slug": "acessibilidade-na-web",
       "descricao": "Boas práticas para construir sites e aplicações acessíveis",
       "isbn": "978-65-86110-10-4",
       "numeroPaginas": 246,
       "publicacao": "2020-04-01",
       "imagemCapa": "https://raw.githubusercontent.com/viniciosneves/alurabooks/curso-novo/public/imagens/livros/acessibilidade.png",
-      "autor": 1,
       "opcoesCompra": [
         {
           "id": 1,
@@ -50,7 +59,11 @@
     },
     {
       "id": 2,
-      "categoria": 3,
+      "categoriaId": 3,
+      "tagIds": [
+        2,
+        3
+      ],
       "titulo": "Angular 11 e Firebase",
       "slug": "angular11-e-firebase",
       "descricao": "Construindo uma aplicação integrada com a plataforma do Google",
@@ -58,7 +71,7 @@
       "numeroPaginas": 163,
       "publicacao": "2019-11-01",
       "imagemCapa": "https://raw.githubusercontent.com/viniciosneves/alurabooks/curso-novo/public/imagens/livros/angular.png",
-      "autor": 2,
+      "autorId": 2,
       "opcoesCompra": [
         {
           "id": 1,
@@ -90,7 +103,10 @@
     },
     {
       "id": 3,
-      "categoria": 1,
+      "categoriaId": 1,
+      "tagIds": [
+        4
+      ],
       "titulo": "Arquitetura de software distribuído",
       "slug": "arquitetura-de-software-distribuído",
       "descricao": "Boas práticas para um mundo de microsserviços",
@@ -98,7 +114,7 @@
       "numeroPaginas": 138,
       "publicacao": "2021-10-01",
       "imagemCapa": "https://raw.githubusercontent.com/viniciosneves/alurabooks/curso-novo/public/imagens/livros/arquitetura.png",
-      "autor": 3,
+      "autorId": 3,
       "opcoesCompra": [
         {
           "id": 1,
@@ -130,7 +146,11 @@
     },
     {
       "id": 4,
-      "categoria": 3,
+      "categoriaId": 3,
+      "tagIds": [
+        5,
+        6
+      ],
       "titulo": "Bootstrap 4",
       "slug": "bootstrap-4",
       "descricao": "Conheça a biblioteca front-end mais utilizada no mundo",
@@ -138,7 +158,7 @@
       "numeroPaginas": 172,
       "publicacao": "2018-05-01",
       "imagemCapa": "https://raw.githubusercontent.com/viniciosneves/alurabooks/curso-novo/public/imagens/livros/bootstrap4.png",
-      "autor": 4,
+      "autorId": 4,
       "opcoesCompra": [
         {
           "id": 1,
@@ -170,7 +190,10 @@
     },
     {
       "id": 5,
-      "categoria": 3,
+      "categoriaId": 3,
+      "tagIds": [
+        7
+      ],
       "titulo": "Cangaceiro JavaScript",
       "slug": "cangaceiro-javascript",
       "descricao": "Uma aventura no sertão da programação",
@@ -178,7 +201,7 @@
       "numeroPaginas": 502,
       "publicacao": "2017-08-01",
       "imagemCapa": "https://raw.githubusercontent.com/viniciosneves/alurabooks/curso-novo/public/imagens/livros/cangaceirojavascript.png",
-      "autor": 5,
+      "autorId": 5,
       "opcoesCompra": [
         {
           "id": 1,
@@ -210,7 +233,10 @@
     },
     {
       "id": 6,
-      "categoria": 3,
+      "categoriaId": 3,
+      "tagIds": [
+        6
+      ],
       "titulo": "CSS Eficiente",
       "slug": "css-eficiente",
       "descricao": "Técnicas e ferramentas que fazem a diferença nos seus estilos",
@@ -218,7 +244,7 @@
       "numeroPaginas": 144,
       "publicacao": "2015-06-01",
       "imagemCapa": "https://raw.githubusercontent.com/viniciosneves/alurabooks/curso-novo/public/imagens/livros/css.png",
-      "autor": 6,
+      "autorId": 6,
       "opcoesCompra": [
         {
           "id": 1,
@@ -250,7 +276,10 @@
     },
     {
       "id": 7,
-      "categoria": 3,
+      "categoriaId": 3,
+      "tagIds": [
+        1
+      ],
       "titulo": "Introdução à Web Semântica",
       "slug": "introducao-a-web-semantica",
       "descricao": "A inteligência da informação",
@@ -258,7 +287,7 @@
       "numeroPaginas": 170,
       "publicacao": "2017-09-01",
       "imagemCapa": "https://raw.githubusercontent.com/viniciosneves/alurabooks/curso-novo/public/imagens/livros/websemantica.png",
-      "autor": 7,
+      "autorId": 7,
       "opcoesCompra": [
         {
           "id": 1,
@@ -290,7 +319,11 @@
     },
     {
       "id": 8,
-      "categoria": 1,
+      "categoriaId": 1,
+      "tagIds": [
+        8,
+        9
+      ],
       "titulo": "Apache Kafka e Spring Boot",
       "slug": "apache-kafka-e-spring-boot",
       "descricao": "Comunicação assíncrona entre microsserviços",
@@ -298,7 +331,7 @@
       "numeroPaginas": 189,
       "publicacao": "2022-01-01",
       "imagemCapa": "https://raw.githubusercontent.com/viniciosneves/alurabooks/curso-novo/public/imagens/livros/kafka.png",
-      "autor": 8,
+      "autorId": 8,
       "opcoesCompra": [
         {
           "id": 1,
@@ -330,7 +363,10 @@
     },
     {
       "id": 9,
-      "categoria": 1,
+      "categoriaId": 1,
+      "tagIds": [
+        10
+      ],
       "titulo": "Construindo APIs REST com Node.js",
       "slug": "construindo-apis-rest-com-nodejs",
       "descricao": "",
@@ -338,7 +374,7 @@
       "numeroPaginas": 187,
       "publicacao": "2016-01-01",
       "imagemCapa": "https://raw.githubusercontent.com/viniciosneves/alurabooks/curso-novo/public/imagens/livros/node.png",
-      "autor": 9,
+      "autorId": 9,
       "opcoesCompra": [
         {
           "id": 1,
@@ -370,7 +406,10 @@
     },
     {
       "id": 10,
-      "categoria": 3,
+      "categoriaId": 3,
+      "tagIds": [
+        11
+      ],
       "titulo": "Guia prático de TypeScript",
       "slug": "guia-pratico-de-typescript",
       "descricao": "Melhore suas aplicações JavaScript",
@@ -378,7 +417,7 @@
       "numeroPaginas": 178,
       "publicacao": "2021-07-01",
       "imagemCapa": "https://raw.githubusercontent.com/viniciosneves/alurabooks/curso-novo/public/imagens/livros/typescript.png",
-      "autor": 10,
+      "autorId": 10,
       "opcoesCompra": [
         {
           "id": 1,
@@ -491,6 +530,124 @@
       "id": 6,
       "nome": "Design e UX",
       "slug": "design-e-ux"
+    }
+  ],
+  "carrinhos": [
+    {
+      "id": 1,
+      "itens": [
+        {
+          "livroId": 4,
+          "opcaoCompraId": 1,
+          "quantidade": 1,
+          "livro": {
+            "id": 4,
+            "categoriaId": 3,
+            "tagIds": [
+              5,
+              6
+            ],
+            "titulo": "Bootstrap 4",
+            "slug": "bootstrap-4",
+            "descricao": "Conheça a biblioteca front-end mais utilizada no mundo",
+            "isbn": "978-85-94188-60-1",
+            "numeroPaginas": 172,
+            "publicacao": "2018-05-01",
+            "imagemCapa": "https://raw.githubusercontent.com/viniciosneves/alurabooks/curso-novo/public/imagens/livros/bootstrap4.png",
+            "autorId": 4,
+            "opcoesCompra": [
+              {
+                "id": 1,
+                "titulo": "E-book",
+                "preco": 29.9,
+                "formatos": [
+                  ".pdf",
+                  ".pub",
+                  ".mob"
+                ]
+              },
+              {
+                "id": 2,
+                "titulo": "Impresso",
+                "preco": 39.9
+              },
+              {
+                "id": 3,
+                "titulo": "E-book + Impresso",
+                "preco": 59.9,
+                "formatos": [
+                  ".pdf",
+                  ".pub",
+                  ".mob"
+                ]
+              }
+            ],
+            "sobre": "Fazer um site elegante nunca foi tão fácil, mesmo para quem não sabe escrever uma linha de CSS e, muito menos, entende como harmonizar cores, balancear elementos e tipografia. O Bootstrap é, resumidamente, um grande arquivo CSS com uma excelente documentação, que possui dezenas e dezenas de componentes prontos. No começo, foi criado pelo Twitter para servir como um guia de estilos em CSS da empresa; hoje, é a biblioteca mais famosa e utilizada no mundo."
+          },
+          "opcaoCompra": {
+            "id": 1,
+            "titulo": "E-book",
+            "preco": 29.9,
+            "formatos": [
+              ".pdf",
+              ".pub",
+              ".mob"
+            ]
+          }
+        },
+        {
+          "livroId": 2,
+          "opcaoCompraId": 1,
+          "quantidade": 1
+        }
+      ],
+      "total": 89.8
+    }
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "nome": "Acessibilidade"
+    },
+    {
+      "id": 2,
+      "nome": "Angular"
+    },
+    {
+      "id": 3,
+      "nome": "Firebase"
+    },
+    {
+      "id": 4,
+      "nome": "Arquitetura"
+    },
+    {
+      "id": 5,
+      "nome": "BootStrap"
+    },
+    {
+      "id": 6,
+      "nome": "CSS"
+    },
+    {
+      "id": 7,
+      "nome": "JavaScript"
+    },
+    {
+      "id": 8,
+      "nome": "Kafka"
+    },
+    {
+      "id": 9,
+      "nome": "Spring Boot"
+    },
+    {
+      "id": 10,
+      "nome": "Node"
+    },
+    {
+      "id": 11,
+      "nome": "TypeScript"
     }
   ]
 }
