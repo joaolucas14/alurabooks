@@ -5,22 +5,48 @@ import LivrosDestaque from "../../componentes/LivrosDestaque";
 import Newsletter from "../../componentes/Newsletter";
 import TagsCategorias from "../../componentes/TagsCategorias";
 import Titulo from "../../componentes/Titulo";
-import { useQuery } from "@tanstack/react-query";
 
 import "./Home.css";
-import { obterLivrosDestaque } from "../../http";
-
+import { gql, useQuery } from "@apollo/client";
+import { ILivro } from "../../interfaces/ILivro";
+const OBTER_DESTAQUES = gql`
+  query ObterLancamentos {
+    destaques {
+      lancamentos {
+        id
+        slug
+        titulo
+        imagemCapa
+        opcoesCompra {
+          id
+          preco
+        }
+        autor {
+          nome
+        }
+      }
+      maisVendidos {
+        id
+        slug
+        titulo
+        imagemCapa
+        opcoesCompra {
+          id
+          preco
+        }
+        autor {
+          nome
+        }
+      }
+    }
+  }
+`;
 const Home = () => {
   const [busca, setBusca] = useState("");
+  const { data } = useQuery<{
+    destaques: { lancamentos: ILivro[]; maisVendidos: ILivro[] };
+  }>(OBTER_DESTAQUES);
 
-  const { data: lancamentos } = useQuery({
-    queryKey: ["destaques"],
-    queryFn: () => obterLivrosDestaque("lancamentos"),
-  });
-  const { data: maisVendidos } = useQuery({
-    queryKey: ["maisVendidos"],
-    queryFn: () => obterLivrosDestaque("mais-vendidos"),
-  });
   return (
     <section className="home">
       <Banner
@@ -38,9 +64,9 @@ const Home = () => {
         </form>
       </Banner>
       <Titulo texto="ÚLTIMOS LANÇAMENTOS" />
-      <LivrosDestaque livros={lancamentos ?? []} />
+      <LivrosDestaque livros={data?.destaques.lancamentos ?? []} />
       <Titulo texto="MAIS VENDIDOS" />
-      <LivrosDestaque livros={maisVendidos ?? []} />
+      <LivrosDestaque livros={data?.destaques.maisVendidos ?? []} />
       <TagsCategorias />
       <Newsletter />
     </section>
