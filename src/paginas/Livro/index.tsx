@@ -90,7 +90,7 @@ export default function Livro() {
           </div>
         </div>
         <div>
-          <SobreAutor autorId={livro.autor} />
+          <SobreAutor autorId={livro.autor.id} />
           <BlocoSobre titulo="Sobre o Livro" corpo={livro.sobre} />
         </div>
       </div>

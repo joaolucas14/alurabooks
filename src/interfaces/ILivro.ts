@@ -15,7 +15,7 @@ export interface ILivro {
   numeroPaginas: number;
   publicacao: string;
   imagemCapa: string;
-  autor: number;
+  autor: { nome: string; id: number };
   opcoesCompra: IOpcaoCompra[];
   sobre: string;
 }
