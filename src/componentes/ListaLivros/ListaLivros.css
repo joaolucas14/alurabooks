@@ -6,3 +6,12 @@
   max-width: 80%;
   margin: 24px auto;
 }
+form {
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+form > div {
+  margin-top: 16px;
+}

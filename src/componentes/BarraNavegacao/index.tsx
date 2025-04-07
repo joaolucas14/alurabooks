@@ -8,18 +8,23 @@ import { useEffect, useState } from "react";
 import ModalLoginUsuario from "../ModalLoginUsuario";
 import { ICategoria } from "../../interfaces/ICategoria";
 import http from "../../http";
+import { gql, useQuery } from "@apollo/client";
 
 const BarraNavegacao = () => {
   const [modalCadastroAberto, setModalCadastroAberto] = useState(false);
   const [modalLoginAberto, setModalLoginAberto] = useState(false);
-  const [categorias, setCategorias] = useState<ICategoria[]>([]);
 
-  useEffect(() => {
-    http.get<ICategoria[]>("categorias").then((resposta) => {
-      console.log(resposta.data);
-      setCategorias(resposta.data);
-    });
-  }, []);
+  const OBTER_CATEGORIA = gql`
+    query ObterCategoria {
+      categorias {
+        id
+        nome
+        slug
+      }
+    }
+  `;
+
+  const { data } = useQuery<{ categorias: ICategoria[] }>(OBTER_CATEGORIA);
 
   let navigate = useNavigate();
 
@@ -50,7 +55,7 @@ const BarraNavegacao = () => {
         <li>
           <a href="#!">Categorias</a>
           <ul className="submenu">
-            {categorias.map((categoria) => (
+            {data?.categorias.map((categoria) => (
               <li key={categoria.id}>
                 <Link
                   to={`/categorias/${categoria.slug}`}
