@@ -9,9 +9,8 @@ interface ListaLivrosProps {
 }
 
 const OBTER_LIVROS = gql`
-  # Write your query or mutation here
-  query ObterLivros {
-    livros {
+  query ObterLivros($categoriaId: Int) {
+    livros(categoriaId: $categoriaId) {
       id
       slug
       titulo
@@ -25,7 +24,11 @@ const OBTER_LIVROS = gql`
 `;
 
 export default function ListaLivros({ categoria }: ListaLivrosProps) {
-  const { data } = useQuery<{ livros: ILivro[] }>(OBTER_LIVROS);
+  const { data } = useQuery<{ livros: ILivro[] }>(OBTER_LIVROS, {
+    variables: {
+      categoriaId: categoria.id,
+    },
+  });
   // const { data: produtos } = useQuery({
   //   queryKey: ["buscaLivrosPorCategoria", categoria],
   //   queryFn: () => obterProdutosDaCategoria(categoria),
