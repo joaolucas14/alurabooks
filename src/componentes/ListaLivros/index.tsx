@@ -1,49 +1,28 @@
-import { gql, useQuery } from "@apollo/client";
 import { ICategoria } from "../../interfaces/ICategoria";
 import CardLivro from "../CardLivro";
 import "./ListaLivros.css";
-import { ILivro } from "../../interfaces/ILivro";
 import { AbBotao, AbCampoTexto } from "ds-alurabooks";
 import { useState } from "react";
+import useLivros from "../../graphql/livros/hooks";
+import { useReactiveVar } from "@apollo/client";
+import { livrosVar } from "../../graphql/livros/state";
 
 interface ListaLivrosProps {
   categoria: ICategoria;
 }
 
-const OBTER_LIVROS = gql`
-  query ObterLivros($categoriaId: Int, $titulo: String) {
-    livros(categoriaId: $categoriaId, titulo: $titulo) {
-      id
-      slug
-      titulo
-      imagemCapa
-      opcoesCompra {
-        id
-        preco
-      }
-    }
-  }
-`;
-
 export default function ListaLivros({ categoria }: ListaLivrosProps) {
   const [textoDaBusca, setTextoDaBusca] = useState("");
-  const { data, refetch } = useQuery<{ livros: ILivro[] }>(OBTER_LIVROS, {
-    variables: {
-      categoriaId: categoria.id,
-      titulo: textoDaBusca,
-    },
-  });
-  // const { data: produtos } = useQuery({
-  //   queryKey: ["buscaLivrosPorCategoria", categoria],
-  //   queryFn: () => obterProdutosDaCategoria(categoria),
-  // });
+  const livros = useReactiveVar(livrosVar);
+  console.log("livros", livros);
 
   const buscarLivros = (evento: React.FormEvent<HTMLFormElement>) => {
     evento.preventDefault();
     if (textoDaBusca) {
-      refetch({
-        categoriaId: categoria.id,
-      });
+      // refetch({
+      //   categoriaId: categoria.id,
+      //   titulo: textoDaBusca,
+      // });
     }
   };
   return (
@@ -59,7 +38,7 @@ export default function ListaLivros({ categoria }: ListaLivrosProps) {
         </div>
       </form>
       <div className="livros">
-        {data?.livros.map((livro) => (
+        {livros.map((livro) => (
           <CardLivro livro={livro} key={livro.id} />
         ))}
       </div>
