@@ -1,8 +1,8 @@
 import { ICategoria } from "../../interfaces/ICategoria";
 import CardLivro from "../CardLivro";
 import "./ListaLivros.css";
-import { AbBotao, AbCampoTexto } from "ds-alurabooks";
-import { useState } from "react";
+import { AbCampoTexto } from "ds-alurabooks";
+import { useEffect, useState } from "react";
 import { useReactiveVar } from "@apollo/client";
 import { FiltroLivrosVar, livrosVar } from "../../graphql/livros/state";
 import useLivros from "../../graphql/livros/hooks";
@@ -13,8 +13,15 @@ interface ListaLivrosProps {
 
 export default function ListaLivros({ categoria }: ListaLivrosProps) {
   const [textoDaBusca, setTextoDaBusca] = useState("");
+  useEffect(() => {
+    FiltroLivrosVar({
+      ...FiltroLivrosVar(),
+      titulo: textoDaBusca.length > 3 ? textoDaBusca : "",
+    });
+  }, [textoDaBusca]);
 
   FiltroLivrosVar({
+    ...FiltroLivrosVar(),
     categoria,
   });
   const livros = useReactiveVar(livrosVar);
@@ -28,9 +35,6 @@ export default function ListaLivros({ categoria }: ListaLivrosProps) {
           onChange={setTextoDaBusca}
           placeholder="Digite o título"
         />
-        <div>
-          <AbBotao texto="Buscar" />
-        </div>
       </form>
       <div className="livros">
         {livros.map((livro) => (
