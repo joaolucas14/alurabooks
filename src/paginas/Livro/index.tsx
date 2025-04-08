@@ -3,6 +3,7 @@ import {
   AbGrupoOpcao,
   AbGrupoOpcoes,
   AbInputQuantidade,
+  AbTag,
 } from "ds-alurabooks";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
@@ -12,14 +13,25 @@ import { useLivro } from "../../graphql/livros/hooks";
 import { formatador } from "../../utils/formatador-moeda";
 
 import "./Livro.css";
+import Loader from "../../componentes/Loader";
+import BlocoSobre from "../../componentes/BlocoSobre";
 
 const Livro = () => {
   const params = useParams();
 
   const [opcao, setOpcao] = useState<AbGrupoOpcao>();
 
-  const { data } = useLivro(params.slug || "");
+  const { data, loading, error } = useLivro(params.slug || "");
 
+  if (error) {
+    console.log("Alguma coisa deu errado");
+    console.log(error);
+    return <h1>Ops! Algum erro inesperado aconteceu</h1>;
+  }
+
+  if (loading) {
+    return <Loader />;
+  }
   const opcoes: AbGrupoOpcao[] = data?.livro.opcoesCompra
     ? data?.livro.opcoesCompra.map((opcao) => ({
         id: opcao.id,
@@ -55,13 +67,22 @@ const Livro = () => {
             </p>
             <footer>
               <div className="qtdContainer">
-                <AbInputQuantidade />
+                <AbInputQuantidade onChange={() => {}} value={0} />
               </div>
               <div>
                 <AbBotao texto="Comprar" />
               </div>
             </footer>
           </div>
+        </div>
+        <div>
+          <BlocoSobre titulo="Sobre o Autor" corpo={data?.livro.autor.sobre} />
+          <BlocoSobre titulo="Sobre o Livro" corpo={data?.livro.sobre} />
+        </div>
+        <div className="tags">
+          {data?.livro.tags?.map((tag) => (
+            <AbTag key={tag.nome} texto={tag.nome} contexto="secundario" />
+          ))}
         </div>
       </div>
     </section>

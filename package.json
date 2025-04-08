@@ -11,7 +11,7 @@
     "@types/jest": "^27.5.2",
     "@types/node": "^16.11.56",
     "axios": "^1.7.9",
-    "ds-alurabooks": "^0.5.2",
+    "ds-alurabooks": "^0.5.7",
     "graphql": "^16.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

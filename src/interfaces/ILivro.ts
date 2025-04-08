@@ -1,3 +1,6 @@
+import { IAutor } from "./IAutor";
+import { ITag } from "./ITag";
+
 export interface IOpcaoCompra {
   id: number;
   titulo: string;
@@ -15,7 +18,8 @@ export interface ILivro {
   numeroPaginas: number;
   publicacao: string;
   imagemCapa: string;
-  autor: { nome: string; id: number };
+  autor: IAutor;
   opcoesCompra: IOpcaoCompra[];
   sobre: string;
+  tags: ITag[];
 }
