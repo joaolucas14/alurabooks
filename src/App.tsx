@@ -3,17 +3,20 @@ import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import Rotas from "./rotas";
 import ABApolloCliente from "./componentes/ABApolloCliente";
+import CarrinhoProvider from "./contextApi/carrinho";
 
 const queryClient = new QueryClient();
 
 function App() {
   return (
     <ABApolloCliente>
-      <QueryClientProvider client={queryClient}>
-        <BrowserRouter>
-          <Rotas />
-        </BrowserRouter>
-      </QueryClientProvider>
+      <CarrinhoProvider>
+        <QueryClientProvider client={queryClient}>
+          <BrowserRouter>
+            <Rotas />
+          </BrowserRouter>
+        </QueryClientProvider>
+      </CarrinhoProvider>
     </ABApolloCliente>
   );
 }

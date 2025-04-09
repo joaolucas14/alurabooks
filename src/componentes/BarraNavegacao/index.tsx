@@ -9,6 +9,7 @@ import ModalLoginUsuario from "../ModalLoginUsuario";
 import { ICategoria } from "../../interfaces/ICategoria";
 import http from "../../http";
 import { gql, useQuery } from "@apollo/client";
+import MiniCarrinho from "../MiniCarrinho";
 
 const BarraNavegacao = () => {
   const [modalCadastroAberto, setModalCadastroAberto] = useState(false);
@@ -102,6 +103,9 @@ const BarraNavegacao = () => {
           <>
             <li>
               <Link to="/minha-conta/pedidos">Minha Conta</Link>
+            </li>
+            <li>
+              <MiniCarrinho />
             </li>
             <li>
               <BotaoNavegacao
