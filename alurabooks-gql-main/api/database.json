@@ -537,24 +537,24 @@
       "id": 1,
       "itens": [
         {
-          "livroId": 4,
+          "livroId": 8,
           "opcaoCompraId": 1,
           "quantidade": 1,
           "livro": {
-            "id": 4,
-            "categoriaId": 3,
+            "id": 8,
+            "categoriaId": 1,
             "tagIds": [
-              5,
-              6
+              8,
+              9
             ],
-            "titulo": "Bootstrap 4",
-            "slug": "bootstrap-4",
-            "descricao": "Conheça a biblioteca front-end mais utilizada no mundo",
-            "isbn": "978-85-94188-60-1",
-            "numeroPaginas": 172,
-            "publicacao": "2018-05-01",
-            "imagemCapa": "https://raw.githubusercontent.com/viniciosneves/alurabooks/curso-novo/public/imagens/livros/bootstrap4.png",
-            "autorId": 4,
+            "titulo": "Apache Kafka e Spring Boot",
+            "slug": "apache-kafka-e-spring-boot",
+            "descricao": "Comunicação assíncrona entre microsserviços",
+            "isbn": "978-65-86110-98-2",
+            "numeroPaginas": 189,
+            "publicacao": "2022-01-01",
+            "imagemCapa": "https://raw.githubusercontent.com/viniciosneves/alurabooks/curso-novo/public/imagens/livros/kafka.png",
+            "autorId": 8,
             "opcoesCompra": [
               {
                 "id": 1,
@@ -582,7 +582,7 @@
                 ]
               }
             ],
-            "sobre": "Fazer um site elegante nunca foi tão fácil, mesmo para quem não sabe escrever uma linha de CSS e, muito menos, entende como harmonizar cores, balancear elementos e tipografia. O Bootstrap é, resumidamente, um grande arquivo CSS com uma excelente documentação, que possui dezenas e dezenas de componentes prontos. No começo, foi criado pelo Twitter para servir como um guia de estilos em CSS da empresa; hoje, é a biblioteca mais famosa e utilizada no mundo."
+            "sobre": "Pensar em comunicação assíncrona entre microsserviços é um caminho interessante quando a aplicação demanda serviços que podem demorar para responder. Para evitar problemas de timeouts e retentativas, utilizam-se filas ou tópicos, aos quais um processo adiciona uma mensagem informando o processamento a ser feito e outro a recebe quando estiver disponível e executa. O Kafka é atualmente um dos principais sistemas para a implementação de processamento assíncrono. Além de disponibilizar os tópicos para a produção e consumo de mensagens, suas diversas funcionalidades facilitam a implementação de nossas aplicações, com a distribuição e o balanceamento de carga entre os consumidores e o processamento de fluxos de dados."
           },
           "opcaoCompra": {
             "id": 1,
@@ -594,24 +594,9 @@
               ".mob"
             ]
           }
-        },
-        {
-          "livroId": 2,
-          "opcaoCompraId": 1,
-          "quantidade": 1
-        },
-        {
-          "livroId": 1,
-          "opcaoCompraId": 1,
-          "quantidade": 1
-        },
-        {
-          "livroId": 8,
-          "opcaoCompraId": 1,
-          "quantidade": 1
         }
       ],
-      "total": 89.8
+      "total": 59.8
     }
   ],
   "tags": [
